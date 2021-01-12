@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Overview {% endblock %}
+{% block head %} Stocks Overview{% endblock %}
+{% block content %}
+<table class="table table-hover table-dark table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Sector</th>
+             <th scope="col">Current price</th>
+             <th scope="col">Open</th>
+             <th scope="col">Prev close</th>
+             <th scope="col">UC limit</th>
+             <th scope="col">LC limit</th>
+             <th scope="col">volume</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for el in context %}
+        <tr>
+            {% for key in el.keys() %}
+             <td>{{ el[key] }}</td>
+            {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
